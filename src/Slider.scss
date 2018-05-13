@@ -4,6 +4,7 @@
   border-radius: 100px;
   border: solid 1px #fbfbfb;
   position: relative;
+  cursor: pointer;
 }
 
 .slider-inner {
@@ -15,10 +16,20 @@
   position: absolute;
 }
 
+.left-toggle {
+  left: 0;
+}
+
+.right-toggle {
+  right: 0;
+}
+
 %slider-text {
   position: absolute;
   margin: 0;
   top: 8px;
+  font-size: 14px;
+  color: white;
 }
 
 $text-margin: 30px;
