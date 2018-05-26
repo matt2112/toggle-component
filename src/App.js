@@ -47,8 +47,8 @@ class App extends Component<Props, State> {
         id: uniqueId('option')
       },
       {
-        correct: 'Cellulose',
-        incorrect: 'Mitochondria',
+        correct: 'Mitochondria',
+        incorrect: 'Cellulose',
         correctOnLeft: false,
         toggleOnLeft: true,
         id: uniqueId('option')
@@ -82,7 +82,7 @@ class App extends Component<Props, State> {
     const { allCorrect, question, options } = this.state;
     return (
       <div id="App">
-        <div id="Wrapper">
+        <div id="Wrapper" className={allCorrect ? 'yellow-orange' : 'green-blue'}>
           <h1 id="Question">{question}</h1>
           <div id="Sliders">
             {options.map((option, idx) => (

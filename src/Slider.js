@@ -24,8 +24,12 @@ const Slider = (props: Props) => (
     aria-valuenow={props.toggleOnLeft ? 'left' : 'right'}
   >
     <div className={`slider-inner ${props.toggleOnLeft ? 'left-toggle' : 'right-toggle'}`} />
-    <h3 className="text-left">{props.correctOnLeft ? props.correct : props.incorrect}</h3>
-    <h3 className="text-right">{props.correctOnLeft ? props.incorrect : props.correct}</h3>
+    <h3 className={`text-left ${props.toggleOnLeft ? 'covered' : ''}`}>
+      {props.correctOnLeft ? props.correct : props.incorrect}
+    </h3>
+    <h3 className={`text-right ${!props.toggleOnLeft ? 'covered' : ''}`}>
+      {props.correctOnLeft ? props.incorrect : props.correct}
+    </h3>
   </div>
 );
 

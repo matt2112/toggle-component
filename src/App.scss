@@ -13,8 +13,18 @@
   height: 60%;
   min-height: 365px;
   border-radius: 8px;
-  background-image: linear-gradient(to bottom, #47e4c1, #07cddd);
   box-shadow: 0 2px 12px 6px rgba(167, 196, 220, 0.5);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.green-blue {
+  background-image: linear-gradient(to bottom, #47e4c1, transparent);
+  background-color: #07cddd;
+}
+
+.yellow-orange {
+  background-image: linear-gradient(to bottom, #e0de35cc, transparent);
+  background-color: #eb8704cc;
 }
 
 #Sliders {
@@ -26,23 +36,18 @@
 }
 
 @mixin textbox-shared {
-  width: 100%;
-  height: 18px;
-  font-weight: bold;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.03rem;
   text-align: center;
-  color: #ffffff;
 }
 
 #Question {
   @include textbox-shared;
-  font-size: 18px;
+  font-size: 1.5rem;
+  margin: 20px 0 10px 0;
 }
 
 #Answer {
   @include textbox-shared;
-  font-size: 14px;
+  font-size: 1.2rem;
+  margin: 10px 0 20px 0;
 }
