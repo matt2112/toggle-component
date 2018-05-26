@@ -1,5 +1,6 @@
 .slider-outer {
-  width: 307px;
+  width: 50%;
+  min-width: 300px;
   height: 45px;
   border-radius: 100px;
   border: solid 1px #fbfbfb;
@@ -8,38 +9,32 @@
 }
 
 .slider-inner {
-  width: 163px;
+  width: 50%;
   height: 45px;
   border-radius: 100px;
   background-color: rgba(249, 249, 249, 0.5);
   box-shadow: 0 0 6px 1px rgba(1, 115, 101, 0.5);
-  position: absolute;
-}
-
-.left-toggle {
-  left: 0;
+  transition: transform 0.5s ease-in-out;
 }
 
 .right-toggle {
-  right: 0;
+  transform: translateX(100%);
 }
-
-%slider-text {
-  position: absolute;
-  margin: 0;
-  top: 8px;
-  font-size: 14px;
-  color: white;
-}
-
-$text-margin: 30px;
 
 .text-left {
-  @extend %slider-text;
-  left: $text-margin;
+  position: absolute;
+  width: 50%;
+  margin: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  box-sizing: border-box;
+  padding: 5px;
 }
 
 .text-right {
-  @extend %slider-text;
-  right: $text-margin;
+  @extend .text-left;
+  right: 0;
 }

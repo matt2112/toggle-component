@@ -15,7 +15,8 @@ type State = {
     correct: string,
     incorrect: string,
     correctOnLeft: boolean,
-    toggleOnLeft: boolean
+    toggleOnLeft: boolean,
+    id: string
   }>
 };
 
@@ -28,25 +29,29 @@ class App extends Component<Props, State> {
         correct: 'Ribosomes',
         incorrect: 'Cell wall',
         correctOnLeft: false,
-        toggleOnLeft: false
+        toggleOnLeft: false,
+        id: uniqueId('option')
       },
       {
         correct: 'Cytoplasm',
         incorrect: 'Chloroplast',
         correctOnLeft: true,
-        toggleOnLeft: false
+        toggleOnLeft: false,
+        id: uniqueId('option')
       },
       {
         correct: 'Partially permeable membrane',
         incorrect: 'Impermeable membrane',
         correctOnLeft: true,
-        toggleOnLeft: false
+        toggleOnLeft: false,
+        id: uniqueId('option')
       },
       {
         correct: 'Cellulose',
         incorrect: 'Mitochondria',
         correctOnLeft: false,
-        toggleOnLeft: true
+        toggleOnLeft: true,
+        id: uniqueId('option')
       }
     ]
   };
@@ -81,7 +86,7 @@ class App extends Component<Props, State> {
           <h1 id="Question">{question}</h1>
           <div id="Sliders">
             {options.map((option, idx) => (
-              <Slider key={uniqueId('slider')} index={idx} onClick={this.clickSlider} {...option} />
+              <Slider key={option.id} index={idx} onClick={this.clickSlider} {...option} />
             ))}
           </div>
           <h2 id="Answer">The answer is {allCorrect ? 'correct!' : 'incorrect.'}</h2>
